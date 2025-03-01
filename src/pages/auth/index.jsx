@@ -1,20 +1,35 @@
-import {auth, provider} from "../../config/firebase-config"
-import { signInWithPopup } from "firebase/auth"
+import { auth, provider } from "../../config/firebase.config";
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate, Navigate } from "react-router-dom";
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 
 export const Auth = () => {
+  const navigate = useNavigate();
+  const { isAuth } = useGetUserInfo();
 
-    const signInWithGoogle = async () => { 
-        const results = signInWithPopup(auth, provider)
-        console.log(results)
-    }
+  const signInWithGoogle = async () => {
+    const results = await signInWithPopup(auth, provider);
+    const authInfo = {
+      userID: results.user.uid,
+      name: results.user.displayName,
+      profilePhoto: results.user.photoURL,
+      isAuth: true,
+    };
+    localStorage.setItem("auth", JSON.stringify(authInfo));
+    navigate("/kitchen");
+  };
 
-    return (
-    <div className="login-page"> 
-        <p>Sign in With Google to Continue</p>
-        <button className="login-with-google" onClick={signInWithGoogle}>
-            {" "}
-            Sign in with Google
-        </button>
+  if (isAuth) {
+    return <Navigate to="/kitchen" />;
+  }
+
+  return (
+    <div className="login-page">
+      <p>Sign In With Google to Continue</p>
+      <button className="login-with-google-btn" onClick={signInWithGoogle}>
+        {" "}
+        Sign In With Google
+      </button>
     </div>
-    )
-}
+  );
+};
