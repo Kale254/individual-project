@@ -5,11 +5,10 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './styles.css';
 
-export const Kitchen = () => {
+export const Entire = () => {
     const [selectedDates, setSelectedDates] = useState([]);
     const {addDays} = useAddDays()
     const {days} = useGetDays()
-
     const onSubmit = (e) => {
         e.preventDefault()
         if (selectedDates.length === 2) {
@@ -112,6 +111,7 @@ export const Kitchen = () => {
                 </form>
 
             </div>
+
         </div>
     )
 }

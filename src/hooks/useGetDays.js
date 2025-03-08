@@ -40,7 +40,7 @@ export const useGetDays = () => {
 
     useEffect(() => {
         getDays()
-    }, [])
+    })
 
     return {days}
 }

@@ -1,18 +1,105 @@
-import './App.css';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+// App.js
+import React, { useState } from 'react';
+import { useNavigate, Routes, Route, Link } from 'react-router-dom';
 import { Auth } from "./pages/auth/index";
-import { Kitchen} from "./pages/kitchen/index";
+import { auth } from "./config/firebase.config"
+import { signOut } from "firebase/auth"
+import { Kitchen } from "./pages/kitchen/index";
+import { Hall } from "./pages/hall/index";
+import { Entire } from "./pages/entire/index";
+import { Home } from "./pages/home/index";
+import { Pictures } from "./pages/pictures/index";
+import { Faq } from "./pages/FAQ/index";
+import ProtectedRoute from './components/ProtectedRoute';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const user = auth.currentUser;
+
+  const signUserOut = async () => {
+    try {
+      await signOut(auth)
+      localStorage.clear()
+      navigate("/")
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" exact element={< Auth />}/>
-          <Route path="/kitchen" element={<Kitchen/>} />
-        </Routes>
-      </Router>
-      </div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={isMenuOpen} aria-label="Toggle navigation" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarSupportedContent">
+            {user ? (
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item px-2"><Link to="/home">Home</Link></li>
+                <li className="nav-item px-2"><Link to="/pictures">Pictures</Link></li>
+                <li className="nav-item px-2"><Link to="/faq">FAQ</Link></li>
+                <li className="nav-item px-2 dropdown">
+                  <button className="btn btn-link dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{marginTop: "-7px"}}>
+                    Reserve
+                  </button>
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><Link to="/kitchen" className="dropdown-item">Kitchen</Link></li>
+                    <li><Link to="/hall" className="dropdown-item">Hall</Link></li>
+                    <li><Link to="/entire" className="dropdown-item">Entire</Link></li>
+                  </ul>
+                </li>
+              </ul>
+            ) : (
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item px-2"><Link to="/home">Home</Link></li>
+                <li className="nav-item px-2"><Link to="/pictures">Pictures</Link></li>
+                <li className="nav-item px-2"><Link to="/faq">FAQ</Link></li>
+              </ul>
+            )}
+            {user ? (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item" onClick={signUserOut}><Link to="/">Sign out</Link></li>
+              </ul>
+            ) : (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item"><Link to="/">Sign in</Link></li>
+              </ul>
+            )}
+          </div>
+        </div>
+      </nav>
+      <Routes>
+        <Route path="/" exact element={<Auth />} />
+        <Route path="/home" exact element={
+            <Home />
+        } />
+        <Route path="/pictures" exact element={
+            <Pictures />
+        } />
+        <Route path="/faq" exact element={
+            <Faq />
+        } />
+        <Route path="/kitchen" element={
+          <ProtectedRoute>
+            <Kitchen />
+          </ProtectedRoute>
+        } />
+        <Route path="/hall" element={
+          <ProtectedRoute>
+            <Hall />
+          </ProtectedRoute>
+        } />
+        <Route path="/entire" element={
+          <ProtectedRoute>
+            <Entire />
+          </ProtectedRoute>
+        } />
+      </Routes>
+    </div>
   );
 }
 

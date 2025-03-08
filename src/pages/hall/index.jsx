@@ -5,7 +5,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './styles.css';
 
-export const Kitchen = () => {
+export const Hall = () => {
     const [selectedDates, setSelectedDates] = useState([]);
     const {addDays} = useAddDays()
     const {days} = useGetDays()
@@ -20,6 +20,7 @@ export const Kitchen = () => {
             setSelectedDates([]);
         }
     }
+
 
     const tileClassName = useCallback(({ date, view }) => {
         if (view === 'month') {

@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.navbar-nav .nav-item .nav-link {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1rem 1rem; 
+}
+
+.dropdown-toggle {
+  vertical-align: middle; /* Align dropdown button with other links */
+}
+
+
