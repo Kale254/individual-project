@@ -11,6 +11,7 @@ import { Home } from "./pages/home/index";
 import { Pictures } from "./pages/pictures/index";
 import { Faq } from "./pages/FAQ/index";
 import ProtectedRoute from './components/ProtectedRoute';
+import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -39,34 +40,47 @@ function App() {
           <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarSupportedContent">
             {user ? (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item px-2"><Link to="/home">Home</Link></li>
-                <li className="nav-item px-2"><Link to="/pictures">Pictures</Link></li>
-                <li className="nav-item px-2"><Link to="/faq">FAQ</Link></li>
-                <li className="nav-item px-2 dropdown">
-                  <button className="btn btn-link dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{marginTop: "-7px"}}>
-                    Reserve
-                  </button>
-                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><Link to="/kitchen" className="dropdown-item">Kitchen</Link></li>
-                    <li><Link to="/hall" className="dropdown-item">Hall</Link></li>
-                    <li><Link to="/entire" className="dropdown-item">Entire</Link></li>
-                  </ul>
-                </li>
-              </ul>
+              <li className="nav-item px-2">
+                <Link to="/home" className="nav-link">Home</Link>
+              </li>
+              <li className="nav-item px-2">
+                <Link to="/pictures" className="nav-link">Pictures</Link>
+              </li>
+              <li className="nav-item px-2">
+                <Link to="/faq" className="nav-link">FAQ</Link>
+              </li>
+              <li className="nav-item px-2 dropdown">
+                <button
+                  className="btn btn-link dropdown-toggle nav-link"
+                  type="button"
+                  id="navbarDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Reserve
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><Link to="/kitchen" className="dropdown-item">Kitchen</Link></li>
+                  <li><Link to="/hall" className="dropdown-item">Hall</Link></li>
+                  <li><Link to="/entire" className="dropdown-item">Entire</Link></li>
+                </ul>
+              </li>
+            </ul>
+            
             ) : (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item px-2"><Link to="/home">Home</Link></li>
-                <li className="nav-item px-2"><Link to="/pictures">Pictures</Link></li>
-                <li className="nav-item px-2"><Link to="/faq">FAQ</Link></li>
+                <li className="nav-item px-2"><Link to="/home" className="nav-link">Home</Link></li>
+                <li className="nav-item px-2"><Link to="/pictures" className="nav-link">Pictures</Link></li>
+                <li className="nav-item px-2"><Link to="/faq" className="nav-link">FAQ</Link></li>
               </ul>
             )}
             {user ? (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item" onClick={signUserOut}><Link to="/">Sign out</Link></li>
+                <li className="nav-item" onClick={signUserOut}><Link to="/" className="nav-link">Sign out</Link></li>
               </ul>
             ) : (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item"><Link to="/">Sign in</Link></li>
+                <li className="nav-item"><Link to="/" className="nav-link">Sign in</Link></li>
               </ul>
             )}
           </div>

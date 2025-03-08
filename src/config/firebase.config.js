@@ -25,3 +25,6 @@ export const db = getFirestore(app)
 // firebase login
 // firebase init
 // firebase deploy
+
+
+ // yarn build -> firebase deploy

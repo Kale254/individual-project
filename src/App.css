@@ -42,29 +42,10 @@
   color: white;
   padding: 1em;
   text-align: center;
-  margin-right: 20px;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  
 }
 
 .nav-links li {
   margin-right: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: #ccc;
 }
 
 .navbar-nav .nav-item {
@@ -78,7 +59,20 @@
 }
 
 .dropdown-toggle {
-  vertical-align: middle; /* Align dropdown button with other links */
+  vertical-align: middle; 
 }
+
+.nav-link, .dropdown-item {
+  text-decoration: none;
+  color: #000; 
+  transition: color 0.3s ease; 
+  cursor: pointer; 
+}
+
+.nav-link:hover, .dropdown-item:hover {
+  color: #007BFF;
+  text-decoration: none; 
+}
+
 
 
