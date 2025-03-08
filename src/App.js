@@ -66,7 +66,6 @@ function App() {
                 </ul>
               </li>
             </ul>
-            
             ) : (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item px-2"><Link to="/home" className="nav-link">Home</Link></li>
