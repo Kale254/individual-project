@@ -1,65 +1,61 @@
-.react-calendar__tile--active {
-    background: #006edc;
-    color: white;
+.homepage {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.react-calendar__tile--now {
-    background: #ffff76;
-    color: black;
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
-.disabled-date {
-    background-color: #ff9999 !important;
-    color: #333 !important;
+.hero-content {
+  width: 50%;
+  padding: 20px;
 }
 
-.available-date {
-    background-color: #99ff99 !important;
-    color: #333 !important;
+.hero-image {
+  background-size: cover;
+  background-position: center;
 }
 
-.past-date {
-    background-color: #e0e0e0 !important;
-    color: #999 !important;
+.rentals-container {
+  max-width: 400px; /* Adjust this value as needed */
+  margin: auto; /* Centers the container */
+  padding: 20px;
 }
 
-.selected-date {
-    background-color: #4a90e2 !important;
-    color: white !important;
+.rentals {
+  display: grid;
+  gap: 20px;
 }
 
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-    background-color: #e6e6e6;
+.rental-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin: 20px
 }
 
-.disabled-date:hover,
-.past-date:hover {
-    cursor: not-allowed;
+.rental-overview {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-.date-range-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.policies {
+  padding: 20px;
 }
 
-.date-range-form div {
-    display: flex;
-    justify-content: space-between;
-}
-
-.date-range-form button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.date-range-form button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
