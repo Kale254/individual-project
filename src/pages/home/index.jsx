@@ -5,7 +5,6 @@ import henderson from "./henderson.jpg";
 export const Home = () => {
   return (
     <div className="homepage">
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to Henderson, NE!</h1>
@@ -16,7 +15,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Rentals Section */}
       <section id="rentals" className="rentals">
         <h2>Rental Options</h2>
         <div className="rental-overview">
@@ -31,7 +29,7 @@ export const Home = () => {
             <p>$150 / day</p>
           </div>
           <div className="rental-card">
-            <h3>Both</h3>
+            <h3>Entire</h3>
             <p>1,500 sqft, 15 tables, 70 chairs</p>
             <p>$350 / day</p>
           </div>
@@ -45,7 +43,6 @@ export const Home = () => {
         <a href="/faq">View Full FAQ</a>
       </section>
 
-      {/* Footer Section */}
       <footer className="footer">
         <p>Contact Us</p>
         <p><a href="https://x.com/wetjenkale/">Twitter</a></p>
