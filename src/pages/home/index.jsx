@@ -7,8 +7,8 @@ export const Home = () => {
     <div className="homepage">
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to Henderson, NE!</h1>
-          <button>Explore Our Rentals</button>
+          <h1>Welcome to Henderson's Community Center!</h1>
+          <a href ="/pictures"><button>Explore Our Rentals</button> </a>
         </div>
         <div className="hero-image">
           <img src={henderson} alt="Loading" />
