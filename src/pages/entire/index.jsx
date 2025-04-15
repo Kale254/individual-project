@@ -1,18 +1,18 @@
-import { useAddDays } from "../../hooks/useAddDays"
+import { useAddEntireDays } from "../../hooks/useAddEntireDays"
 import { useState, useCallback } from "react"
-import { useGetDays } from "../../hooks/useGetDays"
+import { useGetEntireDays } from "../../hooks/useGetEntireDays"
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './styles.css';
 
 export const Entire = () => {
     const [selectedDates, setSelectedDates] = useState([]);
-    const {addDays} = useAddDays()
-    const {days} = useGetDays()
+    const {addEntireDays} = useAddEntireDays()
+    const {days} = useGetEntireDays()
     const onSubmit = (e) => {
         e.preventDefault()
         if (selectedDates.length === 2) {
-            addDays({
+            addEntireDays({
                 daysStart: selectedDates[0].toISOString().split('T')[0],
                 daysEnd: selectedDates[1].toISOString().split('T')[0]
             })

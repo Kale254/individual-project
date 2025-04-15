@@ -1,22 +1,28 @@
-import { useAddDays } from "../../hooks/useAddDays"
+import { useAddKitchenDays } from "../../hooks/useAddKitchenDays"
 import { useState, useCallback } from "react"
-import { useGetDays } from "../../hooks/useGetDays"
+import { useGetKitchenDays } from "../../hooks/useGetKitchenDays"
+import { useAddEntireDays } from "../../hooks/useAddEntireDays"
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './styles.css';
 
 export const Kitchen = () => {
     const [selectedDates, setSelectedDates] = useState([]);
-    const {addDays} = useAddDays()
-    const {days} = useGetDays()
+    const {addKitchenDays} = useAddKitchenDays()
+    const {days} = useGetKitchenDays()
+    const {addEntireDays} = useAddEntireDays()
 
     const onSubmit = (e) => {
         e.preventDefault()
         if (selectedDates.length === 2) {
-            addDays({
+            addKitchenDays({
                 daysStart: selectedDates[0].toISOString().split('T')[0],
                 daysEnd: selectedDates[1].toISOString().split('T')[0]
             })
+            addEntireDays({
+              daysStart: selectedDates[0].toISOString().split('T')[0],
+              daysEnd: selectedDates[1].toISOString().split('T')[0]
+          })
             setSelectedDates([]);
         }
     }
