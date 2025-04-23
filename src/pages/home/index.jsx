@@ -2,6 +2,10 @@ import React from "react";
 import "./styles.css";
 import henderson from "./henderson.jpg";
 
+const myStyle = {
+  bottom: "0"
+}
+
 export const Home = () => {
   return (
     <div className="homepage">
@@ -20,17 +24,14 @@ export const Home = () => {
         <div className="rental-overview">
           <div className="rental-card">
             <h3>Kitchen</h3>
-            <p>1,000 sqft, 10 tables, 50 chairs</p>
-            <p>$250 / day</p>
-          </div>
-          <div className="rental-card">
-            <h3>Hall</h3>
-            <p>500 sqft, 5 tables, 20 chairs</p>
             <p>$150 / day</p>
           </div>
           <div className="rental-card">
-            <h3>Entire</h3>
-            <p>1,500 sqft, 15 tables, 70 chairs</p>
+            <h3>Hall</h3>
+            <p>$250 / day</p>
+          </div>
+          <div className="rental-card">
+            <h3>Entire Rental</h3>
             <p>$350 / day</p>
           </div>
         </div>
@@ -43,11 +44,22 @@ export const Home = () => {
         <a href="/faq">View Full FAQ</a>
       </section>
 
-      <footer className="footer">
-        <p>Contact Us</p>
-        <p><a href="https://x.com/wetjenkale/">Twitter</a></p>
-        <p><a href="https://instagram.com/2kale3/">Instagram</a></p>
-        <p>Email: kdwetjen@icloud.com</p>
+      <footer className="footer" style={{position: "relative"}}>
+        <div className="footer-content" style={myStyle}>
+          <p>Contact Us</p>
+          <p>
+            <a href="https://x.com/wetjenkale/" target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>{" "}
+            |{" "}
+            <a href="https://instagram.com/2kale3/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </p>
+          <p>
+            <a href="mailto:kdwetjen@icloud.com">kdwetjen@icloud.com</a>
+          </p>
+        </div>
       </footer>
     </div>
   );

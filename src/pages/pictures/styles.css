@@ -1,65 +1,159 @@
-.react-calendar__tile--active {
-    background: #006edc;
-    color: white;
-}
-
-.react-calendar__tile--now {
-    background: #ffff76;
-    color: black;
-}
-
-.disabled-date {
-    background-color: #ff9999 !important;
-    color: #333 !important;
-}
-
-.available-date {
-    background-color: #99ff99 !important;
-    color: #333 !important;
-}
-
-.past-date {
-    background-color: #e0e0e0 !important;
-    color: #999 !important;
-}
-
-.selected-date {
-    background-color: #4a90e2 !important;
-    color: white !important;
-}
-
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-    background-color: #e6e6e6;
-}
-
-.disabled-date:hover,
-.past-date:hover {
-    cursor: not-allowed;
-}
-
-.date-range-form {
-    margin-top: 20px;
+.gallery-page {
+    min-height: 100vh;
+    
+    padding-bottom: 60px;
+  }
+  
+  .gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin: 40px 0 30px 0;
+    letter-spacing: 2px;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 0 12px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(25,118,210,0.08);
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+    outline: none;
+    background: #fff;
+  }
+  
+  .gallery-item:focus,
+  .gallery-item:hover {
+    transform: scale(1.035);
+    box-shadow: 0 8px 32px rgba(25,118,210,0.18);
+  }
+  
+  .gallery-img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.2s;
+  }
+  
+  .gallery-item:focus .gallery-img,
+  .gallery-item:hover .gallery-img {
+    filter: brightness(0.95) saturate(1.2);
+  }
+  
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg,rgba(25,118,210,0.85) 60%,rgba(25,118,210,0.1) 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 16px 18px 12px 18px;
+    letter-spacing: 1px;
+    opacity: 0.92;
+    pointer-events: none;
+  }
+  
+  .lightbox {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.88);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
     flex-direction: column;
-    gap: 10px;
-}
-
-.date-range-form div {
-    display: flex;
-    justify-content: space-between;
-}
-
-.date-range-form button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 48px rgba(25,118,210,0.38);
+    margin-bottom: 20px;
+    background: #fff;
+    object-fit: contain;
+    animation: fadeIn 0.3s;
+  }
+  
+  .lightbox-caption {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 44px;
+    right: 50px;
+    font-size: 2.2rem;
+    color: #fff;
+    background: none;
     border: none;
     cursor: pointer;
-}
-
-.date-range-form button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
+    z-index: 10;
+    transition: color 0.2s;
+  }
+  .lightbox-close:hover { color: #90caf9; }
+  
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0 16px;
+    transform: translateY(-50%);
+    transition: color 0.2s;
+  }
+  .lightbox-nav.left { left: 40px; }
+  .lightbox-nav.right { right: 40px; }
+  .lightbox-nav:hover { color: #90caf9; }
+  
+  @media (max-width: 700px) {
+    .gallery-img {
+      height: 170px;
+    }
+    .gallery-title {
+      font-size: 1.6rem;
+      margin: 24px 0 18px 0;
+    }
+    .lightbox-img {
+      max-width: 98vw;
+      max-height: 50vh;
+    }
+    .lightbox-close, .lightbox-nav.left, .lightbox-nav.right {
+      top: 20px;
+      font-size: 1.5rem;
+      left: unset;
+      right: unset;
+    }
+    .lightbox-nav.left { left: 10px; top: 50%; }
+    .lightbox-nav.right { right: 10px; top: 50%; }
+  }
+  

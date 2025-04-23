@@ -1,65 +1,150 @@
-.react-calendar__tile--active {
-    background: #006edc;
-    color: white;
-}
-
-.react-calendar__tile--now {
-    background: #ffff76;
-    color: black;
-}
-
-.disabled-date {
-    background-color: #ff9999 !important;
+body {
+    background: #f6f8fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .reservation-container {
+    max-width: 420px;
+    margin: 40px auto 0 auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    color: #1a237e;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .calendar-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .react-calendar {
+    border: none;
+    width: 100%;
+    background: none;
+  }
+  
+  .react-calendar__tile--active,
+  .selected-date {
+    background: #1976d2 !important;
+    color: #fff !important;
+    border-radius: 8px;
+  }
+  
+  .react-calendar__tile--now {
+    background: #ffe082 !important;
     color: #333 !important;
-}
-
-.available-date {
-    background-color: #99ff99 !important;
-    color: #333 !important;
-}
-
-.past-date {
+    border-radius: 8px;
+  }
+  
+  .disabled-date {
+    background-color: #ffcdd2 !important;
+    color: #b71c1c !important;
+    border-radius: 8px;
+    cursor: not-allowed !important;
+    opacity: 0.7;
+  }
+  
+  .available-date {
+    background-color: #c8e6c9 !important;
+    color: #256029 !important;
+    border-radius: 8px;
+  }
+  
+  .past-date {
     background-color: #e0e0e0 !important;
     color: #999 !important;
-}
-
-.selected-date {
-    background-color: #4a90e2 !important;
-    color: white !important;
-}
-
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-    background-color: #e6e6e6;
-}
-
-.disabled-date:hover,
-.past-date:hover {
-    cursor: not-allowed;
-}
-
-.date-range-form {
+    border-radius: 8px;
+    cursor: not-allowed !important;
+  }
+  
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #bbdefb !important;
+    color: #1976d2 !important;
+  }
+  
+  .date-range-form {
+    width: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.date-range-form div {
+    gap: 14px;
+  }
+  
+  .date-row {
     display: flex;
     justify-content: space-between;
-}
-
-.date-range-form button {
+    align-items: center;
+  }
+  
+  .date-range-form label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .date-range-form button {
     margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
+    padding: 10px 0;
+    background-color: #1976d2;
     color: white;
     border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-}
-
-.date-range-form button:disabled {
-    background-color: #cccccc;
+    transition: background 0.2s;
+  }
+  
+  .date-range-form button:disabled,
+  .date-range-form button[aria-disabled="true"] {
+    background-color: #bdbdbd;
     cursor: not-allowed;
-}
+  }
+  
+  .feedback-message {
+    margin: 18px 0 0 0;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .feedback-message.success {
+    background: #c8e6c9;
+    color: #256029;
+  }
+  
+  .feedback-message.error {
+    background: #ffcdd2;
+    color: #b71c1c;
+  }
+
+  .footer {
+    bottom: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .reservation-container {
+      max-width: 98vw;
+      padding: 10px;
+    }
+    .calendar-wrapper {
+      margin-bottom: 16px;
+    }
+  }
+  

@@ -1,70 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Individual Project Website
 
-## Available Scripts
+For my individual project for CSC 480, I am attempting to create a website that would allow residents of Henderson (my hometown) to make a reservation for use of a community center. The project requirements include being able to allow the user to rent the entire facility or just rent half of it. One half of the facility is just meeting areas, and the other half is a kitchen area. The website needs to be able to provide and hold multiple events, give the user information about the site and cost, tables/chairs available, policies, FAQs, photos, and a calendar to display availability. 
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Authors
 
-### `yarn test`
+- [Kale Wetjen](https://www.github.com/kale254)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Run Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  git clone https://github.com/Kale254/individual-project
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project directory
 
-### `yarn eject`
+```bash
+  cd my-project
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+ yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  yarn start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To host this project, you will need your own Environment Variables to be able to run this project. 
 
-### Code Splitting
+## Appendix
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This site is hosted here: https://individual-project-ae936.web.app/home 
 
-### Analyzing the Bundle Size
+## Home Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Page with a nice greeting + quick overview of the rental options + Link to the FAQ / Policies part of the app. It also has a header + nav for additional routing + links. Furthermore you can click the "Explore Our Rentals" button to be able to see pictures.
 
-### Making a Progressive Web App
+## Pictures
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Before you question why there aren't any pictures of a community center, it is because my town doesn't have a community center currently. To be able to achieve the requirements I added some pictures of the town.
 
-### Advanced Configuration
+## FAQ
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This page has a drop down with all the information needed about reserving such as cost, space available, and Policies abotu the area. 
 
-### Deployment
+## Reservation Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+There are 3 total reservation pages that you can choose (after you are signed in). These pages include the Kitchen, the Hall, and the Entire facility. You can choose which area you would like to reserve. After clicking which one you want, you are linked to a page with a calendar of available and unavailable dates. You can select if you want multiple dates (time is not a consideration). 
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Search Function
+
+The search function of the page allows you to have simple searches that are tagged with each page. It was a requirement to have with the project.
+
+## Sign In / Out
+
+Here you can sign into the application with a Google Account. It will popup after you click sign in. This part utilizes the Firebase auth which makes it easier to integrate authentication into an application. 
+

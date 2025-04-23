@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 75vh;
     background-color: #f0f0f0; /* Light gray background */
   }
   
@@ -35,5 +35,11 @@
   
   .login-with-google-btn:hover {
     background-color: #3367D6; /* Darker Google blue on hover */
+  }
+
+  .footer {
+    bottom: 10;
+    position: absolute;
+    width: 100%;
   }
   

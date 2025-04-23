@@ -76,9 +76,9 @@ function App() {
                     Reserve
                   </button>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><Link to="/kitchen" className="dropdown-item">Kitchen</Link></li>
-                    <li><Link to="/hall" className="dropdown-item">Hall</Link></li>
-                    <li><Link to="/entire" className="dropdown-item">Entire</Link></li>
+                    <li><Link to="/kitchen" className="dropdown-item">Kitchen + Meeting Area</Link></li>
+                    <li><Link to="/hall" className="dropdown-item">Great Hall</Link></li>
+                    <li><Link to="/entire" className="dropdown-item">Entire Facility</Link></li>
                   </ul>
                 </li>
               )}
@@ -133,7 +133,10 @@ function App() {
         {/* Search Results Route */}
         <Route path="/search" element={<SearchResults />} />
       </Routes>
+      
     </div>
+
+    
   );
 }
 

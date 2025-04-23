@@ -37,6 +37,24 @@ export const Auth = () => {
           Sign In With Google
         </button>
       </div>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p>Contact Us</p>
+          <p>
+            <a href="https://x.com/wetjenkale/" target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>{" "}
+            |{" "}
+            <a href="https://instagram.com/2kale3/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </p>
+          <p>
+            <a href="mailto:kdwetjen@icloud.com">kdwetjen@icloud.com</a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
