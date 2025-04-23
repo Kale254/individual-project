@@ -37,7 +37,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Policies and FAQ Section */}
       <section id="policies" className="policies">
         <h2>Policies and FAQ</h2>
         <p>Brief overview of policies</p>

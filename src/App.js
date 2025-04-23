@@ -130,7 +130,7 @@ function App() {
             <Entire />
           </ProtectedRoute>
         } />
-        {/* Search Results Route */}
+
         <Route path="/search" element={<SearchResults />} />
       </Routes>
       
