@@ -44,7 +44,7 @@ To host this project, you will need your own Environment Variables to be able to
 
 ## Appendix
 
-This site is hosted here: https://individual-project-ae936.web.app/home 
+This site is hosted here: https://individual-project-ae936.web.app
 
 ## Home Page
 
