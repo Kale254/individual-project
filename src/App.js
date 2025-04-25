@@ -27,7 +27,7 @@ function App() {
     try {
       await signOut(auth)
       localStorage.clear()
-      navigate("/")
+      navigate("/auth")
     } catch (err) {
       console.error(err)
     }
@@ -61,7 +61,7 @@ function App() {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item px-2"><Link to="/home" className="nav-link">Home</Link></li>
+              <li className="nav-item px-2"><Link to="/" className="nav-link">Home</Link></li>
               <li className="nav-item px-2"><Link to="/pictures" className="nav-link">Pictures</Link></li>
               <li className="nav-item px-2"><Link to="/faq" className="nav-link">FAQ</Link></li>
               {user && (
@@ -98,11 +98,11 @@ function App() {
 
             {user ? (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item" onClick={signUserOut}><Link to="/" className="nav-link">Sign out</Link></li>
+                <li className="nav-item" onClick={signUserOut}><Link to="/auth" className="nav-link">Sign out</Link></li>
               </ul>
             ) : (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item"><Link to="/" className="nav-link">Sign in</Link></li>
+                <li className="nav-item"><Link to="/auth" className="nav-link">Sign in</Link></li>
               </ul>
             )}
           </div>
@@ -111,8 +111,8 @@ function App() {
 
       {/* Routes */}
       <Routes>
-        <Route path="/" exact element={<Auth />} />
-        <Route path="/home" exact element={<Home />} />
+        <Route path="/auth" exact element={<Auth />} />
+        <Route path="/" exact element={<Home />} />
         <Route path="/pictures" exact element={<Pictures />} />
         <Route path="/faq" exact element={<Faq />} />
         <Route path="/kitchen" element={

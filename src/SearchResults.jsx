@@ -16,8 +16,8 @@ export const SearchResults = () => {
     { name: "hall", path: "/hall" },
     { name: "entire building", path: "/entire" },
     { name: "faq", path: "/faq" },
-    { name: "home", path: "/home" },
-    { name: "henderson", path: "/home" },
+    { name: "home", path: "/" },
+    { name: "henderson", path: "/" },
     { name: "price", path: "/faq" },
     { name: "area", path: "/faq" },
     { name: "policies", path: "/faq" },
@@ -38,9 +38,9 @@ export const SearchResults = () => {
     <div className="search-results">
       <h2>Search Results for "{query}"</h2>
       {filteredResults.length > 0 ? (
-        <ul>
+        <ul style={{listStyle: "none"}}>
           {filteredResults.map((result, index) => (
-            <li key={index}>
+            <li style={{listStyle: "none"}} key={index}>
               <button onClick={() => handleNavigation(result.path)}>
                 {result.name}
               </button>

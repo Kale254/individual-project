@@ -6,7 +6,7 @@ function ProtectedRoute({ children }) {
   const user = auth.currentUser;
 
   if (!user) {
-    return <Navigate to="/home" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

@@ -18,14 +18,14 @@ export const Auth = () => {
         isAuth: true,
       };
       localStorage.setItem("auth", JSON.stringify(authInfo));
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
   };
 
   if (isAuth) {
-    return <Navigate to="/home" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (

@@ -30,7 +30,7 @@ export const Faq = () => {
             <p>Here are the details about the area and footage of our rentals:</p>
             <ul>
               <li>Kitchen + Small Meeting Area: 300 sqft</li>
-              <li>Hall: 1200 sqft</li>
+              <li>Great Hall: 1200 sqft</li>
               <li>Entire Facility: 1,500 sqft</li>
               <li>The community center can be rented in 2 becuase of divider between the kitchen/hall.</li>
             </ul>
@@ -46,7 +46,7 @@ export const Faq = () => {
             <p>
               For more information about Henderson, you can visit the official{" "}
               <a href="https://www.cityofhenderson.org" target="_blank" rel="noopener noreferrer">
-                town website
+                town website.
               </a>.
             </p>
           </div>
@@ -75,12 +75,13 @@ export const Faq = () => {
               <li>
                 Kitchen Includes: 1 large table, 8 Folding chairs, sink, dishwasher, fridge, plethora of utensils and restrooms.
               </li>
+              <li>Time is for reservation is all day (we allow you to get there at 6 am until 11:59 pm).</li>
             </ul>
           </div>
         </details>
       </section>
 
-      <footer className="footer" style={{marginTop: "230px", position: "relative"}}>
+      <footer className="footer" style={{marginTop: "330px", position: "relative"}}>
         <div className="footer-content" style={myStyle}>
           <p>Contact Us</p>
           <p>

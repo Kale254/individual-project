@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import henderson from "./henderson.jpg";
+import { Link } from 'react-router-dom';
 
 const myStyle = {
   bottom: "0"
@@ -12,7 +13,7 @@ export const Home = () => {
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to Henderson's Community Center!</h1>
-          <a href ="/pictures"><button>Explore Our Rentals</button> </a>
+          <h5>"Some bigger, none better!"</h5>
         </div>
         <div className="hero-image">
           <img src={henderson} alt="Loading" />
@@ -23,11 +24,11 @@ export const Home = () => {
         <h2>Rental Options</h2>
         <div className="rental-overview">
           <div className="rental-card">
-            <h3>Kitchen</h3>
+            <h3>Kitchen & Meeting Area</h3>
             <p>$150 / day</p>
           </div>
           <div className="rental-card">
-            <h3>Hall</h3>
+            <h3>Great Hall</h3>
             <p>$250 / day</p>
           </div>
           <div className="rental-card">
@@ -38,9 +39,9 @@ export const Home = () => {
       </section>
 
       <section id="policies" className="policies">
-        <h2>Policies and FAQ</h2>
-        <p>Brief overview of policies</p>
-        <a href="/faq">View Full FAQ</a>
+        <h2>Policies and FAQ?</h2>
+        <p>Go to our FAQ page by clicking <Link to="/faq">FAQ</Link></p>
+        
       </section>
 
       <footer className="footer" style={{position: "relative"}}>
