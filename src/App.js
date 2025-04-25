@@ -109,7 +109,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Routes */}
       <Routes>
         <Route path="/auth" exact element={<Auth />} />
         <Route path="/" exact element={<Home />} />

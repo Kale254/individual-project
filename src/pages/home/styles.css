@@ -24,8 +24,8 @@
 }
 
 .rentals-container {
-  max-width: 400px; /* Adjust this value as needed */
-  margin: auto; /* Centers the container */
+  max-width: 400px;
+  margin: auto;
   padding: 20px;
 }
 
